@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.10.2.37"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="TG_Command">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="2"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="210060" Value="Remote"/>
+    <Text ID="210061" Value="Local"/>
+    <Text ID="210062" Value="Auto"/>
+    <Text ID="210063" Value="Manual"/>
+    <Text ID="210064" Value="Power On"/>
+    <Text ID="210065" Value="Power Off"/>
+    <Text ID="210066" Value="Initialize"/>
+    <Text ID="210067" Value="Start"/>
+    <Text ID="210068" Value="Stop"/>
+    <Text ID="210069" Value="Reset"/>
+    <Text ID="210070" Value="EMS"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="210060" Value=""/>
+    <Text ID="210061" Value=""/>
+    <Text ID="210062" Value=""/>
+    <Text ID="210063" Value=""/>
+    <Text ID="210064" Value=""/>
+    <Text ID="210065" Value=""/>
+    <Text ID="210066" Value=""/>
+    <Text ID="210067" Value=""/>
+    <Text ID="210068" Value=""/>
+    <Text ID="210069" Value=""/>
+    <Text ID="210070" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="210060" Value="0"/>
+    <Index ID="210061" Value="1"/>
+    <Index ID="210062" Value="2"/>
+    <Index ID="210063" Value="3"/>
+    <Index ID="210064" Value="4"/>
+    <Index ID="210065" Value="5"/>
+    <Index ID="210066" Value="6"/>
+    <Index ID="210067" Value="7"/>
+    <Index ID="210068" Value="8"/>
+    <Index ID="210069" Value="9"/>
+    <Index ID="210070" Value="10"/>
+  </IndexMap>
+</TextGroup>

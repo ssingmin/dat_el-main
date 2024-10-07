@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package">Utility</Object>
+    <Object Type="File" Private="true">ProcessControl.var</Object>
+    <Object Type="File" Private="true">ProcessControl.typ</Object>
+    <Object Type="Package">AsmControl</Object>
+    <Object Type="Package">Control</Object>
+    <Object Type="Package">Vision</Object>
+    <Object Type="Package">Visu</Object>
+    <Object Type="Package">LibAsMbTCP1_ST</Object>
+  </Objects>
+</Package>

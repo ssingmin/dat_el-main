@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.10.2.37"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="TG_SysStatus">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="7"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="215953" Value="UNKNOWN"/>
+    <Text ID="215954" Value="OFF"/>
+    <Text ID="215955" Value="ON"/>
+    <Text ID="215956" Value="IDLE"/>
+    <Text ID="215957" Value="PROCESS"/>
+    <Text ID="215958" Value="ERROR STOP"/>
+    <Text ID="215959" Value="MANUAL"/>
+    <Text ID="215960" Value="POWER ON"/>
+    <Text ID="215961" Value="POWER OFF"/>
+    <Text ID="215962" Value="INITIALIZATION"/>
+    <Text ID="215963" Value="RECOVERY"/>
+    <Text ID="215964" Value="RESET"/>
+    <Text ID="215965" Value="STOPPING"/>
+    <Text ID="215966" Value="EMS"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="215953" Value=""/>
+    <Text ID="215954" Value=""/>
+    <Text ID="215955" Value=""/>
+    <Text ID="215956" Value=""/>
+    <Text ID="215957" Value=""/>
+    <Text ID="215958" Value=""/>
+    <Text ID="215959" Value=""/>
+    <Text ID="215960" Value=""/>
+    <Text ID="215961" Value=""/>
+    <Text ID="215962" Value=""/>
+    <Text ID="215963" Value=""/>
+    <Text ID="215964" Value=""/>
+    <Text ID="215965" Value=""/>
+    <Text ID="215966" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="215953" Value="0"/>
+    <Index ID="215954" Value="1"/>
+    <Index ID="215955" Value="2"/>
+    <Index ID="215956" Value="3"/>
+    <Index ID="215957" Value="4"/>
+    <Index ID="215958" Value="5"/>
+    <Index ID="215959" Value="6"/>
+    <Index ID="215960" Value="10"/>
+    <Index ID="215961" Value="20"/>
+    <Index ID="215962" Value="30"/>
+    <Index ID="215963" Value="31"/>
+    <Index ID="215964" Value="40"/>
+    <Index ID="215965" Value="50"/>
+    <Index ID="215966" Value="60"/>
+  </IndexMap>
+</TextGroup>

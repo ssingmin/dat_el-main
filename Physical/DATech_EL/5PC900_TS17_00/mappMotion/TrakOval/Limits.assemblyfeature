@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gSecLimit" Type="assemblyfeature">
+    <Selector ID="Type" Value="LocalLimits">
+      <Group ID="LocalLimit[1]">
+        <Selector ID="Location">
+          <Property ID="SectorRef" Value="Sector3D" />
+        </Selector>
+        <Group ID="MotionLimits">
+          <Selector ID="Velocity" Value="Basic">
+            <Property ID="Velocity" Value="0.25" />
+          </Selector>
+        </Group>
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

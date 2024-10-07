@@ -1,0 +1,29 @@
+VAR
+	fbStage1 : MyTrak_Buffer; (*can supply*)
+	fbStage2 : MyTrak_TransStage; (*TC insert*)
+	fbStage3 : MyTrak_TransStage; (*TC push*)
+	fbStage4 : MyTrak_TransStage; (*TC vision*)
+	fbStage5 : MyTrak_TransStage; (*TC NG re-insert*)
+	fbStage6 : MyTrak_TransStage; (*BCR vision*)
+	fbStage7 : MyTrak_TransStage; (*CCR 1*)
+	fbStage8 : MyTrak_TransStage; (*CCR 1 vision*)
+	fbStage9 : MyTrak_TransStage; (*CCR 2 *)
+	fbStage10 : MyTrak_TransStage; (*Maint*)
+	fbStage11 : MyTrak_TransStage; (*CCR 2 vision*)
+	fbStage12 : MyTrak_TransStage; (*CCR 3*)
+	fbStage13 : MyTrak_TransStage; (*CCR 3 vision*)
+	fbStage14 : MyTrak_TransStage; (*CSZ*)
+	fbStage15 : MyTrak_TransStage; (*3D scan done position*)
+	fbStage16 : MyTrak_TransStage; (*Diameter inspection*)
+	fbStage17 : MyTrak_TransStage; (*NG out*)
+	fbStage18 : MyTrak_TransStage; (*unloading*)
+	fbStage19 : MyTrak_TransStage; (*Clean*)
+	fbReturn : MyTrak_Serialize;
+	fbCSZWait : MyTrak_TicketArea;
+	fbUnloadingWait : MyTrak_TicketArea;
+END_VAR
+(**)
+VAR
+	readShuttleInfo : MC_BR_ShReadInfo_AcpTrak;
+	i : USINT;
+END_VAR

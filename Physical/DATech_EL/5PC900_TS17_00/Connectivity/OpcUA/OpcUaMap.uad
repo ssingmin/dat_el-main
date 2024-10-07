@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="7" ArVersion="C4.91">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <Task Name="Vis">
+        <Variable Name="Vis">
+          <Variable Name="Shuttle" />
+        </Variable>
+      </Task>
+      <Task Name="CtrlAsm" />
+      <Task Name="ctrTransfe" />
+    </Module>
+  </DefaultView>
+</OpcUaSource>

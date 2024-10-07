@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global variables">gTrakSupport.var</Object>
+    <Object Type="File" Description="Global data types">gTrakSupport.typ</Object>
+    <Object Type="Program" Language="IEC">Vis</Object>
+    <Object Type="Program" Language="IEC" Description="Shuttle Attach">Simulation</Object>
+    <Object Type="Program" Language="IEC">AxisCon</Object>
+    <Object Type="DataObject" Language="Apt">AcpParTab</Object>
+    <Object Type="Program" Language="IEC" Description="trak support: assembly design">TrakDesign</Object>
+  </Objects>
+</Package>

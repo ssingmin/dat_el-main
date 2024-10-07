@@ -1,0 +1,119 @@
+(*task interface structure*)
+VAR
+	TrakDesign : TrakDesignType;
+END_VAR
+(*online interface*)
+VAR
+	OnlineFunctionJob : ARRAY[0..19] OF TrakDesignOnlineFunctionJobType;
+	ShuttleIxFound : UDINT := 0;
+	ShuttleIxAdd : UDINT := 0;
+END_VAR
+(*general*)
+VAR
+	RTInfo_0 : RTInfo;
+	TCCycleTime : LREAL;
+	i : UDINT;
+	k : UINT;
+	m : UINT;
+	ErrorMessage : USINT := 0;
+	VersionMcAcpTrak : MoVerStruc_typ := (0);
+	VersionTrakDesignTask : MoVerStruc_typ := (0);
+END_VAR
+(*get shuttle axis*)
+VAR
+	MC_BR_AsmReadInfo_AcpTrak_0 : MC_BR_AsmReadInfo_AcpTrak;
+	MC_BR_AsmGetShuttle_AcpTrak_0 : MC_BR_AsmGetShuttle_AcpTrak;
+	StepGetShuttle : TrakDesignStepGetShuttleEnum;
+	CyclesWaitGetShuttle : UINT := TRAK_MAX_SHUTTLE * 5;
+	CntWait : UINT;
+	CntShuttle : UINT;
+	CntShuttleIdentPowerOn : UDINT;
+	CntShuttleAddedOnline : UDINT;
+	CntShuttleDeletedOnline : UDINT;
+	ShuttleAxis : ARRAY[1..TRAK_MAX_SHUTTLE] OF McAxisType;
+	AssemblyOrientation : REAL := 0.0;
+END_VAR
+(*shutte & segment power*)
+VAR
+	MC_BR_ShReadInfo_AcpTrak_0 : ARRAY[1..TRAK_MAX_SHUTTLE] OF MC_BR_ShReadInfo_AcpTrak;
+	MC_BR_ShReadSegmentInfo_0 : ARRAY[1..TRAK_MAX_SHUTTLE] OF MC_BR_ShReadSegmentInfo_AcpTrak;
+	MC_BR_ShReadFrame_AcpTrak_0 : ARRAY[1..TRAK_MAX_SHUTTLE] OF MC_BR_ShReadFrame_AcpTrak;
+	ShuttleVelEdge : ARRAY[1..TRAK_MAX_SHUTTLE] OF LREAL;
+	ShuttleGravity : ARRAY[1..TRAK_MAX_SHUTTLE] OF LREAL;
+	SegmentSetValues : ARRAY[0..3] OF McAcpTrakShSegSetValuesType;
+	SegmentLength : ARRAY[1..TRAK_MAX_SEGMENT] OF LREAL;
+	SegmentNumCoil : ARRAY[1..TRAK_MAX_SEGMENT] OF UINT;
+	SegCableResistance : ARRAY[1..TRAK_MAX_SEGMENT] OF LREAL;
+	CableResistance : ARRAY[1..TRAK_MAX_POWER_CABLE] OF LREAL;
+	FrameXEdge : ARRAY[1..TRAK_MAX_SHUTTLE] OF LREAL;
+	FrameYEdge : ARRAY[1..TRAK_MAX_SHUTTLE] OF LREAL;
+	FrameZEdge : ARRAY[1..TRAK_MAX_SHUTTLE] OF LREAL;
+	FrameXdiff : LREAL := 0.0;
+	FrameYdiff : LREAL := 0.0;
+	FrameZdiff : LREAL := 0.0;
+	FrameVector : LREAL := 0.0;
+END_VAR
+(*statistics - average power*)
+VAR
+	FubAvgShuttle : ARRAY[1..TRAK_MAX_SHUTTLE] OF MTBasicsPT1;
+	FubAvgSegment : ARRAY[1..TRAK_MAX_SEGMENT] OF MTBasicsPT1;
+	FubLoadSegment : ARRAY[1..TRAK_MAX_SEGMENT] OF MTBasicsPT1;
+	FubAvgCable : ARRAY[1..TRAK_MAX_POWER_CABLE] OF MTBasicsPT1;
+	FubPeakCable : ARRAY[1..TRAK_MAX_POWER_CABLE] OF MTBasicsPT1;
+	FubAvgSupply : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF MTBasicsPT1;
+	FubPeakSupply : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF MTBasicsPT1;
+	FubAvgSupplyMeas : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF MTBasicsPT1;
+	FubPeakSupplyMeas : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF MTBasicsPT1;
+	FubAvgMainSupply : MTBasicsPT1;
+	FubPeakMainSupply : MTBasicsPT1;
+	FubAvgMainSupplyMeas : MTBasicsPT1;
+	FubPeakMainSupplyMeas : MTBasicsPT1;
+END_VAR
+(*Supply error reset*)
+VAR
+	WaitIoPS080CmdClear : REAL := 0.0;
+	StatusGetSupplyAxisRef : UINT := 0;
+	LenGetSupplyAxisRef : UDINT := 0;
+	SupplyAxisRef : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF UDINT;
+	MC_Reset_0 : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF MC_Reset;
+END_VAR
+(*analyze layout*)
+VAR
+	CheckLayout : BOOL := FALSE;
+	LayoutMessageCnt : UINT;
+	LayoutMessagePrio : ARRAY[1..TRAK_MAX_SEGMENT] OF USINT;
+	LayoutMessage : ARRAY[1..TRAK_MAX_SEGMENT] OF STRING[200];
+END_VAR
+(*analyze mechanical situation*)
+VAR
+	MechResultEventCnt : USINT;
+	MechResultEventLog : ARRAY[0..19] OF TrakDesignMechType;
+END_VAR
+(*collect TrakDesign-Tool data (diagnosis-data)*)
+VAR CONSTANT
+	TRAK_DIAG_BUFFER_SIZE : UDINT := 1000;
+END_VAR
+VAR
+	DiagBufferStatusAlloc : UINT;
+	DiagBufferAdr : UDINT;
+	DiagBufferCntIn : UDINT;
+	DiagBufferCntOut : UDINT;
+	CntDiagPrescale : USINT;
+	DiagDataPara : TrakDesignDiagParaType;
+	DiagData : TrakDesignDiagType;
+END_VAR
+(*collect Supply data (ServoSoft-import-data)*)
+VAR CONSTANT
+	TRAK_SUPPLY_BUFFER_SIZE : UDINT := 20000;
+END_VAR
+VAR
+	SupplyBufferStatusAlloc : UINT;
+	SupplyBufferAdr : UDINT;
+	SupplyBufferCntIn : UDINT;
+	SupplyBufferCntStart : UDINT;
+	SupplyBufferCntWrite : UDINT;
+	SupplyPowerFilter : ARRAY[0..TRAK_MAX_POWER_SUPPLY] OF REAL;
+	SupplyData : TrakDesignSupplyDataType;
+	SupplyDataTimer : LREAL := 0.0;
+	SupplyDataEnable : BOOL := FALSE;
+END_VAR

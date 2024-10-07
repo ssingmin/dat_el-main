@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?AutomationStudio Version="4.10.2.37"?>
+<TextGroup xmlns="http://br-automation.co.at/AS/VC/Project" Name="TextGroup_DSOutput">
+  <Property Name="Description" Value=""/>
+  <Property Name="Index" Value="9"/>
+  <TextSnippets/>
+  <TextLayer LanguageId="en">
+    <Text ID="223929" Value="MovEnable"/>
+    <Text ID="223930" Value="MovReset"/>
+    <Text ID="223931" Value="MovTargetTime"/>
+    <Text ID="223932" Value="MovTargetPosition"/>
+    <Text ID="223933" Value="MovQuitFifoEmpty"/>
+    <Text ID="223934" Value="MovQuitFifoFull"/>
+    <Text ID="223935" Value="MovQuitTargetTimeViolation"/>
+    <Text ID="223936" Value="MovQuitMaxFrequencyViolation"/>
+  </TextLayer>
+  <TextLayer LanguageId="de">
+    <Text ID="223929" Value=""/>
+    <Text ID="223930" Value=""/>
+    <Text ID="223931" Value=""/>
+    <Text ID="223932" Value=""/>
+    <Text ID="223933" Value=""/>
+    <Text ID="223934" Value=""/>
+    <Text ID="223935" Value=""/>
+    <Text ID="223936" Value=""/>
+  </TextLayer>
+  <IndexMap>
+    <Index ID="223929" Value="0"/>
+    <Index ID="223930" Value="1"/>
+    <Index ID="223931" Value="2"/>
+    <Index ID="223932" Value="3"/>
+    <Index ID="223933" Value="4"/>
+    <Index ID="223934" Value="5"/>
+    <Index ID="223935" Value="6"/>
+    <Index ID="223936" Value="7"/>
+  </IndexMap>
+</TextGroup>

@@ -1,0 +1,39 @@
+VAR
+	gShuttleMon : McAcpTrakAssemblyMonData;
+END_VAR
+(**)
+VAR
+	gLocal : BOOL;
+	gManual : BOOL;
+	gCmdRemote : Command_type;
+	gCmd : Command_type;
+END_VAR
+VAR RETAIN
+	gParInitialized : BOOL;
+	gPar : Parameter_type;
+END_VAR
+VAR
+	gSts : Status_type;
+END_VAR
+(**)
+VAR
+	gSim : BOOL;
+END_VAR
+(**)
+VAR
+	SIZE_OF_USERDATA : UDINT := 64; (*24*)
+END_VAR
+(*3D *)
+VAR
+	g3DStartPos : LREAL := 10.52;
+	g3DEndPos : LREAL := 10.588;
+END_VAR
+(*Vision*)
+VAR
+	gShuttleTotalCount : DINT;
+	gInitialDone : BOOL;
+END_VAR
+(*Barrier at buffer*)
+VAR
+	BrBuffer : MC_BR_BarrierCommand_AcpTrak;
+END_VAR

@@ -1,0 +1,49 @@
+(**)
+VAR
+	MovEnable : BOOL;
+	MovReset : BOOL;
+	MovTargetPosition : DINT;
+	MovTargetTime : DINT;
+	MovPosition : DINT;
+	MovTimeValid : DINT;
+	AddedTime : DINT;
+END_VAR
+(**)
+VAR
+	nextReady : BOOL;
+	shuttleID : REFERENCE TO STRING[19];
+	userData : ShuttleUserData_typ;
+	fbUserData : MC_BR_ShCopyUserData_AcpTrak;
+END_VAR
+(**)
+VAR
+	interface : Interface_Process_1Sh;
+	fbFlyStage : MyTrak_TicketArea;
+END_VAR
+(**)
+VAR
+	fbTrigInfo : MC_BR_TrgPointGetInfo_AcpTrak;
+	fbTrig : MC_BR_TrgPointEnable_AcpTrak;
+	Axis : McAxisType;
+	ShReadInfo : MC_BR_ShReadInfo_AcpTrak;
+	ShReadSectorPosInfo : MC_BR_ShReadSectorPos_AcpTrak;
+	Step : STEP_3DSensor;
+	doTrigger : BOOL;
+END_VAR
+(**)
+VAR
+	timeMeasurement : TimingMeasurement_type;
+END_VAR
+(**)
+VAR
+	MoveTime : REAL;
+	EncCnt : UINT;
+END_VAR
+(*Monitoring*)
+VAR
+	bModuleOK : BOOL;
+	bMovQuitFifoEmpty : BOOL;
+	bMovQuitFifoFull : BOOL;
+	bMovQuitTargetTimeVioloation : BOOL;
+	bMovQuitMaxFrequencyViolation : BOOL;
+END_VAR

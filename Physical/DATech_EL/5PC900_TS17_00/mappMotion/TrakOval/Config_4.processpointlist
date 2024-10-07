@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="ProcessPointList_1" Type="processpointlist">
+    <Selector ID="ProcessPoint[0]">
+      <Property ID="Name" Value="ptCheckOut" />
+      <Property ID="SectorRef" Value="SectorTrackAll" />
+      <Property ID="Position" Value="0.1" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[1]">
+      <Property ID="Name" Value="ptCheckIn" />
+      <Property ID="SectorRef" Value="SectorTrackAll" />
+      <Property ID="Position" Value="0.66" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="30" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[2]">
+      <Property ID="Name" Value="pt3DIn" />
+      <Property ID="SectorRef" Value="SectorTrackAll" />
+      <Property ID="Position" Value="10.52" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[3]">
+      <Property ID="Name" Value="pt3DOut" />
+      <Property ID="SectorRef" Value="SectorTrackAll" />
+      <Property ID="Position" Value="10.588" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[4]">
+      <Property ID="Name" Value="pt3D" />
+      <Property ID="SectorRef" Value="Sector3D" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[5]">
+      <Property ID="Name" Value="ptCSZInt" />
+      <Property ID="SectorRef" Value="SectorTrackA_4" />
+      <Property ID="Position" Value="1.76" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[6]">
+      <Property ID="Name" Value="ptCSZIn" />
+      <Property ID="SectorRef" Value="SectorTrackA_4" />
+      <Property ID="Position" Value="1.75" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[7]">
+      <Property ID="Name" Value="ptCSZOut" />
+      <Property ID="SectorRef" Value="SectorTrackA_4" />
+      <Property ID="Position" Value="2.02" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[8]">
+      <Property ID="Name" Value="ptUnloadingIn" />
+      <Property ID="SectorRef" Value="SectorCurve4" />
+      <Property ID="Position" Value="0.76" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[9]">
+      <Property ID="Name" Value="ptUnloadingOut" />
+      <Property ID="SectorRef" Value="SectorCurve4" />
+      <Property ID="Position" Value="0.88" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[10]">
+      <Property ID="Name" Value="ptVision" />
+      <Property ID="SectorRef" Value="SectorTrackAll" />
+      <Property ID="Position" Value="7.1" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+  </Element>
+  <Element ID="ProcessPointList_2" Type="processpointlist">
+    <Selector ID="ProcessPoint[0]">
+      <Property ID="Name" Value="ptStage1" />
+      <Property ID="SectorRef" Value="SectorCurve1" />
+      <Property ID="Position" Value="0.2295" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[1]">
+      <Property ID="Name" Value="ptStage2" />
+      <Property ID="SectorRef" Value="SectorTrackA_2" />
+      <Property ID="Position" Value="0.1778" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[2]">
+      <Property ID="Name" Value="ptStage3" />
+      <Property ID="SectorRef" Value="SectorTrackA_2" />
+      <Property ID="Position" Value="0.482" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[3]">
+      <Property ID="Name" Value="ptStage4" />
+      <Property ID="SectorRef" Value="SectorTrackA_2" />
+      <Property ID="Position" Value="0.715" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[4]">
+      <Property ID="Name" Value="ptStage5" />
+      <Property ID="SectorRef" Value="SectorTrackA_2" />
+      <Property ID="Position" Value="0.9375" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[5]">
+      <Property ID="Name" Value="ptStage6" />
+      <Property ID="SectorRef" Value="SectorTrackA_2" />
+      <Property ID="Position" Value="1.036" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[6]">
+      <Property ID="Name" Value="ptStage7" />
+      <Property ID="SectorRef" Value="SectorTrackA_2" />
+      <Property ID="Position" Value="2.231" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[7]">
+      <Property ID="Name" Value="ptStage8" />
+      <Property ID="SectorRef" Value="SectorTrackA_2" />
+      <Property ID="Position" Value="2.6712" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[8]">
+      <Property ID="Name" Value="ptStage9" />
+      <Property ID="SectorRef" Value="SectorTrackA_2" />
+      <Property ID="Position" Value="3.151" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[9]">
+      <Property ID="Name" Value="ptStage10" />
+      <Property ID="SectorRef" Value="SectorTrackA_3" />
+      <Property ID="Position" Value="0.801" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[10]">
+      <Property ID="Name" Value="ptStage11" />
+      <Property ID="SectorRef" Value="SectorCurve3" />
+      <Property ID="Position" Value="1.1005" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[11]">
+      <Property ID="Name" Value="ptStage12" />
+      <Property ID="SectorRef" Value="SectorTrackA_4" />
+      <Property ID="Position" Value="0.3805" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[12]">
+      <Property ID="Name" Value="ptStage13" />
+      <Property ID="SectorRef" Value="SectorTrackA_4" />
+      <Property ID="Position" Value="1.0407" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[13]">
+      <Property ID="Name" Value="ptStage14" />
+      <Property ID="SectorRef" Value="SectorTrackA_4" />
+      <Property ID="Position" Value="2.0096" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[14]">
+      <Property ID="Name" Value="ptStage15" />
+      <Property ID="SectorRef" Value="SectorTrackA_4" />
+      <Property ID="Position" Value="2.751" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[15]">
+      <Property ID="Name" Value="ptStage16" />
+      <Property ID="SectorRef" Value="SectorTrackA_4" />
+      <Property ID="Position" Value="2.8605" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[16]">
+      <Property ID="Name" Value="ptStage17" />
+      <Property ID="SectorRef" Value="SectorCurve4" />
+      <Property ID="Position" Value="0.121" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[17]">
+      <Property ID="Name" Value="ptStage18" />
+      <Property ID="SectorRef" Value="SectorCurve4" />
+      <Property ID="Position" Value="0.9179" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[18]">
+      <Property ID="Name" Value="ptStage19" />
+      <Property ID="SectorRef" Value="SectorTrackA_1" />
+      <Property ID="Position" Value="0.601" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[19]">
+      <Property ID="Name" Value="ptBuffer" />
+      <Property ID="SectorRef" Value="SectorTrackAll" />
+      <Property ID="Position" Value="0" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+  </Element>
+</Configuration>

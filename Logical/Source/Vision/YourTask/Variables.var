@@ -1,0 +1,5 @@
+VAR
+	startupDelay : TON_10ms; (*Delay startup for mappVision*)
+	cmdLoadRecipeAfterBoot : BOOL;
+END_VAR
+(**)

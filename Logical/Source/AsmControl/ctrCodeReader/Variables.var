@@ -1,0 +1,23 @@
+VAR
+	CodeStep : E_CODE_STEP;
+END_VAR
+(**)
+VAR
+	fbMovelVel : MC_BR_RoutedMoveVel_AcpTrak;
+	fbMovelAbs : MC_BR_RoutedMoveAbs_AcpTrak;
+	fbTrigInfo : MC_BR_TrgPointGetInfo_AcpTrak;
+	fbTrig : MC_BR_TrgPointEnable_AcpTrak;
+	ShReadInfo : MC_BR_ShReadInfo_AcpTrak;
+	Axis : McAxisType;
+	userData : ShuttleUserData_typ;
+	fbUserData : MC_BR_ShCopyUserData_AcpTrak;
+	checkTakeCount : USINT;
+	checkSHCount : USINT;
+	bMoveVelActive : BOOL;
+	StrShuttleCount : STRING[80];
+	StrTempShuttleID : STRING[80];
+	bNextStep1 : BOOL;
+	bNextStep2 : BOOL;
+	bNextStep3 : BOOL;
+	bNextStep4 : BOOL;
+END_VAR

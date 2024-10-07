@@ -1,0 +1,34 @@
+VAR
+	initStep : INT;
+END_VAR
+(**)
+VAR
+	fbSecGetShuttles : MC_BR_SecGetShuttleSel_AcpTrak;
+END_VAR
+(**)
+VAR
+	fbMovelVel : MC_BR_RoutedMoveVel_AcpTrak;
+END_VAR
+(**)
+VAR
+	bMoveVelActive : BOOL;
+END_VAR
+(**)
+VAR
+	fbBarCmd : MC_BR_BarrierCommand_AcpTrak;
+	fbBarNG : MC_BR_BarrierCommand_AcpTrak;
+	fbBarBufferOut : MC_BR_BarrierCommand_AcpTrak;
+END_VAR
+(**)
+VAR
+	fbCheckOutStatus : MC_BR_BarrierReadInfo_AcpTrak;
+	fbCheckInStatus : MC_BR_BarrierReadInfo_AcpTrak;
+	fbCheckIn : MC_BR_BarrierCommand_AcpTrak;
+	fbCheckOut : MC_BR_BarrierCommand_AcpTrak;
+	fbEndLimit : MC_BR_BarrierCommand_AcpTrak;
+END_VAR
+(**)
+(**)
+VAR
+	TotalShuttleCount : DINT;
+END_VAR

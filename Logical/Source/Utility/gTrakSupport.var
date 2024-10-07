@@ -1,0 +1,16 @@
+(*constants*)
+VAR CONSTANT
+	TRAK_MAX_SHUTTLE : UINT := 100; (*maximum number of shuttles handled in this application - should be set equal or higher than Shuttles-maximum-count setting in mappMotion assembly config file*)
+	TRAK_MAX_SEGMENT : UINT := 26; (*maximum number of segments handled in this application*)
+	TRAK_MAX_POWER_CABLE : UINT := 7; (*maximum number of power cables handled in this application*)
+	TRAK_MAX_POWER_SUPPLY : UINT := 7; (*maximum number of power supplys handled in this application*)
+END_VAR
+(*interface TrakDesign shuttle online interaction*)
+VAR
+	gTrakDesignShuttleOnline : TrakDesignShuttleOnlineType := (0);
+END_VAR
+(*interface TrakDesign shuttle online interaction*)
+VAR CONSTANT
+	COUNT_OF_SIM_SHUTTLE : USINT := 19;
+	GAP_BETWEEN_OF_SHUTTLE : LREAL := 0.14;
+END_VAR

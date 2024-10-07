@@ -1,0 +1,46 @@
+(**)
+VAR
+	currentProcess : E_PROCESS_STATUS;
+	targetSlot : REFERENCE TO MyTrakSlotType;
+	nextSlot : {REDUND_UNREPLICABLE} UDINT;
+	shuttleID : REFERENCE TO STRING[19];
+END_VAR
+(**)
+VAR
+	step : DINT;
+END_VAR
+(**)
+VAR
+	interface : Interface_Process;
+	userData : ShuttleUserData_typ;
+END_VAR
+(**)
+VAR
+	fbUserData : MC_BR_ShCopyUserData_AcpTrak;
+END_VAR
+(**)
+VAR
+	tmr : TON;
+	fbShuttleOutCheck : MC_BR_TrgPointEnable_AcpTrak;
+END_VAR
+(**)
+VAR
+	NextReady : BOOL;
+	Timer : TON;
+	Timer2 : TON;
+END_VAR
+(**)
+VAR
+	bBlockSendOnce : BOOL;
+	bBlockSendOnceAck : BOOL;
+	bBlockReadOnce : BOOL;
+	bBlockReadOnceAck : BOOL;
+	bBlockSendShuttleID : BOOL;
+	bBlockSendShuttleIDAck : BOOL;
+END_VAR
+(**)
+VAR
+	fbInterLock : MC_BR_BarrierCommand_AcpTrak;
+	fbBarReadInfo : MC_BR_BarrierReadInfo_AcpTrak;
+	ptInterlock : UDINT;
+END_VAR

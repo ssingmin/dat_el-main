@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Program" Language="IEC">CtrlAsm</Object>
+    <Object Type="Program" Language="IEC">CtrAsmInitial</Object>
+    <Object Type="Program" Language="IEC">CtrAsmInitial2</Object>
+    <Object Type="Program" Language="IEC" Description="Maint Control">ctrMaint</Object>
+    <Object Type="Program" Language="IEC" Description="Teaching in Manual Mode">ctrTeaching</Object>
+    <Object Type="Program" Language="IEC">ctrCodeReader</Object>
+    <Object Type="Program" Language="IEC">ctrCleanMode</Object>
+  </Objects>
+</Package>

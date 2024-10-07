@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Library SubType="ANSIC" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>Types.typ</File>
+    <File>Constants.var</File>
+    <File Description="Function and Function Block Define">MyTrak.fun</File>
+    <File Description="Additional Header for all function">MyTrakFunc.h</File>
+    <File Description="Shuttle Feeding System">MyTrak_Buffer.c</File>
+    <File Description="Move shuttles  from source process point to stage">MyTrak_ServeStage.c</File>
+    <File Description="Move shuttles from source stage to target stage ">MyTrak_TransStage.c</File>
+    <File Description="Move shuttles from source stage to target sector">MyTrak_Serialize.c</File>
+    <File Description="Shuttle Feeding System">MyTrak_ShInfeeder.c</File>
+    <File Description="Keep shuttles count between two process point">MyTrak_TicketArea.c</File>
+    <File Description="ChangeVelcity in specific process point">MyTrak_ChangeVel.c</File>
+    <File Description="Not Implemented">MyTrak_UntilStop.c</File>
+    <File Description="Check all slot's status">CheckProcessStatus.c</File>
+    <File Description="Initializa &amp; Get/Return AbsMove FunctionBlock">InitializeFunctionblockBank.c</File>
+    <File>Random.c</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="standard" />
+    <Dependency ObjectName="AsBrStr" />
+    <Dependency ObjectName="McAcpTrak" />
+    <Dependency ObjectName="McAxis" />
+    <Dependency ObjectName="McBase" />
+  </Dependencies>
+</Library>

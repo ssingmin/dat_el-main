@@ -1,0 +1,25 @@
+(********************************************************************
+ * COPYRIGHT -- Bernecker + Rainer
+ ********************************************************************
+ * Program: MbApp
+ * File: MbApp.var
+ * Author: Bernecker + Rainer
+ * Created: October 22, 2009
+ ********************************************************************
+ * Local variables of program MbApp
+ ********************************************************************)
+VAR
+	mb_station : STRING[20]; (*path to modbus station*)
+	register_address : UINT; (*register address on modbus station*)
+	register_value : UINT; (*register value to write*)
+	fub_status : UINT; (*status of function blocks*)
+	mb_exception : USINT; (*modbus exception*)
+	instruction : UDINT; (*start instruction*)
+	mbWriteSingleRegister_0 : mbWriteSingleRegister; (*function block structure*)
+	check_status : BOOL; (*flag to check status*)
+	mbGetLastException_0 : mbGetLastException; (*function block structure*)
+	coil_address : UINT; (*coils address on modbus station*)
+	mbReadCoils_0 : mbReadCoils; (*function block structure*)
+	coil_values : ARRAY[0..15] OF BOOL; (*read data*)
+	instruction_ready : BOOL; (*flag marks instruction "ready"*)
+END_VAR

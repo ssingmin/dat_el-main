@@ -1,0 +1,23 @@
+VAR
+	fbAsmGetShuttle : MC_BR_AsmGetShuttle_AcpTrak;
+	fbRoutedMoveAbs : MC_BR_RoutedMoveAbs_AcpTrak;
+	fbReadShuttleInfo : MC_BR_ShReadInfo_AcpTrak;
+	fbStop : MC_Stop;
+	fbGetUserData : MC_BR_ShCopyUserData_AcpTrak;
+END_VAR
+(**)
+VAR
+	cmdNextSh : R_TRIG;
+	cmdMoveAbs : R_TRIG;
+	cmdStop : R_TRIG;
+END_VAR
+(**)
+VAR
+	Step : E_MAINT_STEP; (*Step*)
+	UserData : ShuttleUserData_typ; (*User Data of Selected Shuttle*)
+	NextShuttle : BOOL; (*Connect to Next Shuttle*)
+	MaintShuttleControlEnable : BOOL; (*Maint Controller Enable*)
+	CurrentShuttleIndex : UINT; (*Current Shuttle Index*)
+	MoveAbsolute : BOOL; (*Maint Controller Enable*)
+	Stop : BOOL; (*Maint Controller Enable*)
+END_VAR

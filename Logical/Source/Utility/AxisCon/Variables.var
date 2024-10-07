@@ -1,0 +1,16 @@
+VAR
+	MpAxis : ARRAY[0..4] OF MpAxisBasic;
+	MpAxisPar : ARRAY[0..4] OF MpAxisBasicParType;
+END_VAR
+(**)
+VAR CONSTANT
+	AXIS_MAIN : USINT := 0;
+	AXIS01 : USINT := 1;
+	AXIS02 : USINT := 2;
+	AXIS03 : USINT := 3;
+	AXIS04 : USINT := 4;
+END_VAR
+(**)
+VAR
+	i : USINT;
+END_VAR

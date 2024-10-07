@@ -1,0 +1,16 @@
+(**)
+VAR CONSTANT
+	SIM_POWER_ON : INT := 0;
+	SIM_ADD_SHUTTLE : INT := 100;
+	SIM_POWER_OFF : INT := 200;
+	SIM_INIT_END : INT := 300;
+END_VAR
+(**)
+VAR
+	step : INT;
+	fbPowerOn : MC_BR_AsmPowerOn_AcpTrak;
+	fbPowerOff : MC_BR_AsmPowerOff_AcpTrak;
+	fbAddShuttle : MC_BR_SecAddShuttle_AcpTrak;
+	shuttlePosition : ARRAY[1..COUNT_OF_SIM_SHUTTLE] OF LREAL;
+	loop : USINT;
+END_VAR

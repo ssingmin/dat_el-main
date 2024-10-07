@@ -1,0 +1,251 @@
+(*shutte & segment power - used in ACTION CalcShuttleSegmentPower*)
+VAR
+	ParaShuttleType : TrakDesignShuttleTypeEnum := SHUTTLE_UNDEFINED;
+	SysData : ARRAY[0..200] OF LREAL;
+	ShData : ARRAY[0..200] OF LREAL;
+	ShDataShuttleAny : ARRAY[0..200] OF LREAL;
+	CntSetValuesValid : USINT;
+	FieldModeActive : BOOL;
+	ShuttleOnCircularArea : BOOL := FALSE;
+	kF0 : LREAL := 0.0;
+	kFk : LREAL := 0.0;
+	Isq : LREAL;
+	Isd : LREAL;
+	Ivec : LREAL := 0.0;
+	Isa : LREAL := 0.0;
+	Isb : LREAL := 0.0;
+	rho_off : LREAL := 0.0;
+	rho_sm : LREAL := 0.0;
+	rho_cos : LREAL := 0.0;
+	rho_sin : LREAL := 0.0;
+	Is_U : LREAL := 0.0;
+	Is_V : LREAL := 0.0;
+	Is_W : LREAL := 0.0;
+	c : USINT := 0;
+	p : DINT := 0;
+	ForceShuttleCalc : LREAL := 0.0;
+	PowerShuttleCalcKin : LREAL;
+	PowerShuttleCalcAct : LREAL;
+	IxSegment : UINT;
+	LenSegment : LREAL;
+	NumCoilSegment : UINT;
+	PosSegment : LREAL;
+	PosSegFactor : LREAL;
+	SupplyPowerCalcAct : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF LREAL;
+	SupplyRailPower : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF LREAL;
+	SupplyRailPowerMeas : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF LREAL;
+	SupplyRailIx : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF UDINT;
+	SupplyRailCnt : ARRAY[1..TRAK_MAX_POWER_SUPPLY] OF INT;
+	CoilPrio : USINT := 0;
+	CoilCurr : REAL := 0.0;
+	CalcSegCurr : BOOL := FALSE;
+	SegCurr : ARRAY[1..TRAK_MAX_SEGMENT] OF SegCurrType;
+END_VAR
+(*layout*)
+VAR
+	DualTrakSegCnt0 : USINT := 0;
+	DualTrakSeg0 : ARRAY[0..1] OF DualTrakSegType := [2((0))];
+	DualTrakSegCnt1 : USINT := 0;
+	DualTrakSeg1 : ARRAY[0..1] OF DualTrakSegType := [2((0))];
+	DualTrakSegGap : ARRAY[0..2] OF DualTrakSegType := [3((0))];
+	DualTrakGapPos : LREAL := 0.0;
+	DualTrakGapPosMod : LREAL := 0.0;
+END_VAR
+(*debug*)
+VAR
+	FubDelayCalcAct : ARRAY[0..TRAK_MAX_POWER_SUPPLY] OF MTBasicsTimeDelay;
+	FubDelayMeasAct : ARRAY[0..TRAK_MAX_POWER_SUPPLY] OF MTBasicsTimeDelay;
+END_VAR
+(*file history*)
+VAR
+	CreateFileHistory : BOOL := FALSE;
+	DTStructureGetTime_0 : DTStructureGetTime := (0);
+	TimeActStruct : DTStructure := (0);
+	TimeActString : STRING[32] := '';
+	FileNameReportHistory : STRING[64] := '';
+	FileNameToolDataHistory : STRING[64] := '';
+	FileNameSupplyDataHistory : STRING[64] := '';
+END_VAR
+(*save report to file*)
+VAR
+	ExpertReport : BOOL := FALSE; (*additional display of the physical values in the report file*)
+	StepReport : StepEnum;
+	WaitReport : REAL := 0.0;
+	SaveDataSectionMax : UINT;
+	SaveDataSection : UINT;
+	SaveDataIxMax : UINT;
+	SaveDataIx : UINT;
+	CntReportError : UINT := 0;
+	CntReportWarning : UINT := 0;
+	PowerCalcLoadPeak : LREAL := 0.0;
+	SegmentTmax : ARRAY[1..TRAK_MAX_SEGMENT] OF LREAL; (*parameter maximum allowed segment temperature [°C] / 0..use default*)
+	SegmentT : LREAL;
+	LoadE : ARRAY[0..3] OF DINT := [4(0)];
+	LoadT : DINT := 0;
+	LoadMax : DINT;
+	TempString : STRING[32];
+	pFileChar : REFERENCE TO USINT;
+	FileDelete_0 : FileDelete;
+	FileCreate_0 : FileCreate;
+	FileWrite_0 : FileWrite;
+	FileClose_0 : FileClose;
+	FileCopy_0 : FileCopy;
+	ReportFileIdent : UDINT;
+	ReportFileOffset : UDINT;
+	ReportDataBuffer : STRING[100000];
+	ReportDataLen : UDINT;
+END_VAR
+(*save diag to file*)
+VAR
+	OnlineCmdRecordToolData : BOOL := FALSE;
+	StepDiag : StepEnum;
+	WaitDiag : REAL := 0.0;
+	pDiagBufferOut : REFERENCE TO TrakDesignDiagType;
+	FileDelete_1 : FileDelete;
+	FileCreate_1 : FileCreate;
+	FileOpen_1 : FileOpen;
+	FileRead_1 : FileRead;
+	FileWrite_1 : FileWrite;
+	FileClose_1 : FileClose;
+	FileCopy_1 : FileCopy;
+	ScnFileName : STRING[32] := '';
+	ScnFileIdent : UDINT;
+	ScnFileLen : UDINT;
+	ScnFileData : ARRAY[0..199999] OF USINT;
+	DiagFileIdent : UDINT;
+	DiagFileOffset : UDINT;
+	DiagDataBuffer : ARRAY[0..299999] OF USINT;
+	DiagDataBufferCopy : UDINT;
+	DiagDataLen : UDINT;
+	DiagDataShuttleCnt : UINT := 0;
+END_VAR
+(*save supply data to file*)
+VAR
+	CmdSaveSupplyData : BOOL := FALSE;
+	ParaFileNameSupplyData : STRING[32] := '';
+	StepSupplyData : StepEnum;
+	pSupplyDataBufferOut : REFERENCE TO TrakDesignSupplyDataType;
+	FileDelete_2 : FileDelete;
+	FileCreate_2 : FileCreate;
+	FileWrite_2 : FileWrite;
+	FileClose_2 : FileClose;
+	FileCopy_2 : FileCopy;
+	SupplyFileIdent : UDINT;
+	SupplyFileOffset : UDINT;
+	SupplyDataBuffer : ARRAY[0..299999] OF USINT;
+	SupplyDataLen : UDINT;
+	SupplyDataIx : UINT;
+END_VAR
+(**)
+(*#######################################################*)
+(*mechanical simulation*)
+(*#######################################################*)
+(**)
+(*Sorting and selection of the actuated segments*)
+VAR
+	SegmentDataSelection : ARRAY[0..1] OF SegmentSelectionData_typ;
+	tempSegmentData : SegmentSelectionData_typ;
+	SegmentDataSelection_old : ARRAY[0..1] OF SegmentSelectionData_typ;
+	delta_Seg0Pos : LREAL := 0;
+	orientation_cal : INT := 1;
+END_VAR
+(**)
+(*diverter doublecomb*)
+VAR
+	double_comb_old : BOOL := FALSE;
+	double_comb : BOOL := FALSE;
+	VZ : INT := 0;
+	ac_L : LREAL := 0.0;
+	ac_R : LREAL := 0.0;
+	fm_L : LREAL := 0.0;
+	fm_R : LREAL := 0.0;
+	distri_fac : LREAL := 0.0;
+END_VAR
+(**)
+(*control variable*)
+VAR
+	j : USINT := 0;
+	k01 : USINT := 0;
+END_VAR
+(**)
+(*Calculation variables*)
+VAR
+	at_xsh : LREAL := 0.0;
+	an_ysh : LREAL := 0.0;
+	v : LREAL := 0.0;
+	v_old : LREAL := 0.0;
+	frame_orientation : Frame_orientation_typ := (phi:=0.0,theta:=0.0,psi:=0.0);
+	frame_orientation_old : Frame_orientation_typ := (phi:=0.0,theta:=0.0,psi:=0.0);
+	delta_angle : LREAL := 0.0;
+	omega_z : LREAL := 0.0;
+	omega_z_old : LREAL := 0.0;
+	omegaDOT_z : LREAL := 0.0;
+	omegaDOT_z_raw : LREAL := 0.0;
+	omegaDOT_z_raw_old : LREAL := 0.0;
+END_VAR
+(**)
+VAR
+	spinDotTotal : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	momentumDotCGtotal : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	aCGtotal : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	FRredx : LREAL := 0.0;
+	MRredCPS : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+END_VAR
+(**)
+(*Shuttle parameter*)
+VAR
+	rCPS2F12 : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rCPS2F34 : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rCPS2F5 : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rCPS2F6 : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rON2CPS : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rCPS2CGsh : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	Ishzz : LREAL := 0.0;
+	rHelpMRredCPSy : LREAL := 0.0;
+	rHelpMRredCPSz : LREAL := 0.0;
+	msh : LREAL := 0.0;
+END_VAR
+(*Magnetic*)
+VAR
+	rCPS2FmagR : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rCPS2FmagL : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	MmagLz : LREAL := 0.0;
+	MmagRz : LREAL := 0.0;
+	FmagLz : LREAL := 0.0;
+	FmagLy : LREAL := 0.0;
+	FmagRz : LREAL := 0.0;
+	FmagRy : LREAL := 0.0;
+	Fshear : LREAL := 0.0;
+	Fattraction : LREAL := 0.0;
+	FmaxProp : LREAL := 0.0;
+END_VAR
+(**)
+(*Inertia parameter total system*)
+VAR
+	mtotal : LREAL := 0.0;
+	rCPS2CGtotal : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rCGcarrier2CGtotal : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rCGload2CGtotal : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	rCGsh2CGtotal : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+	IxzTotal : LREAL := 0.0;
+	IyzTotal : LREAL := 0.0;
+	IzzTotal : LREAL := 0.0;
+	Fgtotal : Vec_typ := (x:=0.0,y:=0.0,z:=0.0);
+END_VAR
+(**)
+(*Matrices and solution vectors*)
+VAR
+	brhs : ARRAY[0..5] OF LREAL := [6(0.0)];
+	A : System_matrix_typ := (0);
+	Solutions6extremeCases : ARRAY[1..6] OF Solution_typ := [6((0))];
+	Atemp : ARRAY[0..35] OF LREAL := [36(0.0)];
+END_VAR
+(**)
+(*analyse*)
+VAR
+	vaild_solution : ARRAY[0..5] OF INT := [6(0)];
+	insufficient_mech_power_solution : BOOL := FALSE;
+	flyoff : BOOL := FALSE;
+	MechThrustFilterCnt : USINT;
+	MechResultFilterCnt : USINT;
+END_VAR

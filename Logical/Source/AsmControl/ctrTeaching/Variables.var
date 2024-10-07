@@ -1,0 +1,16 @@
+VAR
+	step : UDINT;
+	selectedStage : E_STAGE_LIST;
+	openDialog : BOOL;
+	execute : BOOL;
+	apply : BOOL;
+	position : LREAL;
+	position_max : LREAL;
+	position_min : LREAL;
+END_VAR
+(**)
+VAR
+	r_trgExecute : R_TRIG;
+	r_trgApply : R_TRIG;
+	elasticAbsMove : MC_BR_ElasticMoveAbs_AcpTrak;
+END_VAR

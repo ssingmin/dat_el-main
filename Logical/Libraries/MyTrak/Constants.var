@@ -1,0 +1,20 @@
+(**)
+VAR CONSTANT
+	MyTrakIdle : DINT := 0;
+	MyTrakRun : DINT := 1;
+	MyTrakManual : DINT := 2;
+	MyTrakNotEnoughShuttle : DINT := 40000;
+	MyTrakMaximumControllerOverflow : DINT := 40001;
+	MyTrakMinimumControllerUnderflow : DINT := 40002;
+	MyTrakBusy : DINT := 65534;
+	MyTrakDisabled : DINT := 65535;
+END_VAR
+(**)
+VAR CONSTANT
+	MyTrakNotExistSourceStage : DINT := -40000;
+	MyTrakNotExistTargetStage : DINT := -40001;
+	MyTrakNotExistSourceProcessPoint : DINT := -40002;
+	MyTrakNotExistSourceCheckIn : DINT := -40003;
+	MyTrakNotExistSourceCheckOut : DINT := -40004;
+	MyTrakNotExistCheckinPt : DINT := -40000;
+END_VAR

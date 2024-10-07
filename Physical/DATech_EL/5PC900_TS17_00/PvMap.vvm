@@ -1,0 +1,18 @@
+VAR_CONFIG
+	Cyclic#1.::ifStage2:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage1:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage3:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage2:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage4:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage3:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage5:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage4:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage6:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage5:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage7:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage6:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage8:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage7:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage9:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage8:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage11:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage10:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage12:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage11:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage13:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage12:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage15:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage14:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage16:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage15:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage17:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage16:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage18:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage17:NextReady; (*Insert your comment here...*)
+	Cyclic#1.::ifStage19:interface.Equipment.Ready AT %Q.Cyclic#1.::ifStage18:NextReady; (*Insert your comment here...*)
+END_VAR

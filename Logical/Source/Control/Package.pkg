@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Program" Language="IEC">ctrTransfer</Object>
+    <Object Type="Program" Language="IEC" Description="Can supply">ifStage1</Object>
+    <Object Type="Program" Language="IEC" Description="TC insert">ifStage2</Object>
+    <Object Type="Program" Language="IEC" Description="TC push">ifStage3</Object>
+    <Object Type="Program" Language="IEC" Description="TC vision">ifStage4</Object>
+    <Object Type="Program" Language="IEC" Description="TC NG re-insert">ifStage5</Object>
+    <Object Type="Program" Language="IEC" Description="BCR vision">ifStage6</Object>
+    <Object Type="Program" Language="IEC" Description="CCR 1">ifStage7</Object>
+    <Object Type="Program" Language="IEC" Description="CCR 1 vision">ifStage8</Object>
+    <Object Type="Program" Language="IEC" Description="CCR 2">ifStage9</Object>
+    <Object Type="Program" Language="IEC" Description="Maint">ifStage10</Object>
+    <Object Type="Program" Language="IEC" Description="CCR 2 vision">ifStage11</Object>
+    <Object Type="Program" Language="IEC" Description="CCR 3">ifStage12</Object>
+    <Object Type="Program" Language="IEC" Description="3D scanner flying ">if3D</Object>
+    <Object Type="Program" Language="IEC" Description="CCR 3">ifStage13</Object>
+    <Object Type="Program" Language="IEC" Description="CSZ">ifStage14</Object>
+    <Object Type="Program" Language="IEC" Description="3D arrive position">ifStage15</Object>
+    <Object Type="Program" Language="IEC" Description="Diameter inspection">ifStage16</Object>
+    <Object Type="Program" Language="IEC" Description="NG out">ifStage17</Object>
+    <Object Type="Program" Language="IEC" Description="Unloading">ifStage18</Object>
+    <Object Type="Program" Language="IEC" Description="Clean">ifStage19</Object>
+  </Objects>
+</Package>

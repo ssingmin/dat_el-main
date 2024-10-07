@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="Feature_Sim_Shuttle_Def" Type="assemblyfeature">
+    <Selector ID="Type" Value="InitShuttleSim">
+      <Group ID="InitShuttleSim[1]">
+        <Property ID="SectorRef" Value="SectorTrackA_2" />
+        <Property ID="Orientation" Value="Positive" />
+        <Selector ID="ShuttleDefinition" Value="ShuttleSetDefinition">
+          <Property ID="StartPosition" Value="0.05" />
+          <Property ID="NumberOfShuttles" Value="15" />
+          <Property ID="DistnaceBetweenShuttles" Value="0.105" />
+        </Selector>
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

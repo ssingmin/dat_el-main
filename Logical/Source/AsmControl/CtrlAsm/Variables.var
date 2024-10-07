@@ -1,0 +1,57 @@
+(**)
+VAR
+	fbAsmPowerOn : MC_BR_AsmPowerOn_AcpTrak;
+	fbAsmPowerOff : MC_BR_AsmPowerOff_AcpTrak;
+	fbAsmReset : MC_BR_AsmReset_AcpTrak;
+	fbAsmStop : MC_BR_AsmStop_AcpTrak;
+	fbAsmGetShuttle : MC_BR_AsmGetShuttle_AcpTrak;
+	fbUserData : MC_BR_ShCopyUserData_AcpTrak;
+	fbReset : MC_BR_SegReset_AcpTrak;
+	fbAsmReadErrorInfo : MC_BR_AsmReadErrorInfo_AcpTrak;
+	fbAsmReadInfo : MC_BR_AsmReadInfo_AcpTrak;
+	fbAsmReadStatus : MC_BR_AsmReadStatus_AcpTrak;
+END_VAR
+(**)
+VAR
+	cmdPowerOn : R_TRIG;
+	cmdPowerOff : R_TRIG;
+	cmdInit : R_TRIG;
+	cmdEMS : R_TRIG;
+	cmdStart : R_TRIG;
+	cmdStop : R_TRIG;
+	cmdReset : R_TRIG;
+	cmdTeaching : R_TRIG;
+	cmdClean : R_TRIG;
+END_VAR
+(**)
+VAR
+	UserData : ShuttleUserData_typ;
+END_VAR
+(**)
+VAR
+	ShuttleCount : USINT;
+	StrShuttleCount : STRING[80];
+END_VAR
+(**)
+VAR
+	gStsPowerOn : BOOL;
+	gStsPowerOff : BOOL;
+	gStsInitialize : BOOL;
+	gStsEMS : BOOL;
+	gStsProcess : BOOL;
+	gStsStopping : BOOL;
+	gStsReset : BOOL;
+	gStsIdle : BOOL;
+	gStsReady : BOOL;
+	gStsManual : BOOL;
+	gStsLocal : BOOL;
+	gStsAsmOn : BOOL;
+	gStsAsmOff : BOOL;
+	gStsErrorStop : BOOL;
+END_VAR
+(**)
+VAR
+	OperatingHours : DINT;
+	RunningTime : UDINT;
+	SystemTime : UINT;
+END_VAR

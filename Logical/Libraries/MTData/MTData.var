@@ -1,0 +1,6 @@
+VAR CONSTANT
+	mtBCD_ERR_DATA_NB_VALUES_HIGH : DINT := -1058012164; (*Error: Maximum number of input values exceeded. FB stopped.*)
+	mtBCD_ERR_DATA_WINDOW_INVALID : DINT := -1058012163; (*Error: MovingWindowLength invalid.*)
+	mtBCD_WRN_DATA_WINDOW_INVALID : DINT := -2131753988; (*Warning: MovingWindowLength invalid. Retaining the last valid configuration.*)
+	mtGNR_ERR_MEM_ALLOC_FAILED : DINT := -1058013181; (*Error: An error occurred during memory allocation.*)
+END_VAR
