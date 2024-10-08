@@ -36,3 +36,7 @@ VAR
 	bBlockSendShuttleID : BOOL;
 	bBlockSendShuttleIDAck : BOOL;
 END_VAR
+(**)
+VAR
+	btestsmlee : BOOL;
+END_VAR

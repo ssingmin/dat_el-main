@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">MpAudit/Custom</prop>
+  </header>
+  <body>
+    <tu tuid="0">
+      <tuv xml:lang="en">
+        <seg>{&amp;msg}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4100">
+      <tuv xml:lang="en">
+        <seg>Insert your message, '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="1">
+      <tuv xml:lang="en">
+        <seg>ifStage1. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="2">
+      <tuv xml:lang="en">
+        <seg>ifStage2. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="3">
+      <tuv xml:lang="en">
+        <seg>ifStage3. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="4">
+      <tuv xml:lang="en">
+        <seg>ifStage4. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="5">
+      <tuv xml:lang="en">
+        <seg>ifStage5. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="6">
+      <tuv xml:lang="en">
+        <seg>ifStage6. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="7">
+      <tuv xml:lang="en">
+        <seg>ifStage7. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="8">
+      <tuv xml:lang="en">
+        <seg>ifStage8. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="9">
+      <tuv xml:lang="en">
+        <seg>ifStage9. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="10">
+      <tuv xml:lang="en">
+        <seg>ifStage10. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="11">
+      <tuv xml:lang="en">
+        <seg>ifStage11. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="12">
+      <tuv xml:lang="en">
+        <seg>ifStage12. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="13">
+      <tuv xml:lang="en">
+        <seg>ifStage13. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="14">
+      <tuv xml:lang="en">
+        <seg>ifStage14. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="15">
+      <tuv xml:lang="en">
+        <seg>ifStage15. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="16">
+      <tuv xml:lang="en">
+        <seg>ifStage16. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="17">
+      <tuv xml:lang="en">
+        <seg>ifStage17. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="18">
+      <tuv xml:lang="en">
+        <seg>ifStage18. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+    <tu tuid="19">
+      <tuv xml:lang="en">
+        <seg>ifStage19. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

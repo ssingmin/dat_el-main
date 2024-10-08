@@ -43,6 +43,7 @@
   </TaskClass>
   <TaskClass Name="Cyclic#4">
     <Task Name="MbApp" Source="Source.LibAsMbTCP1_ST.MbApp.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="srvAudit" Source="Source.Utility.srvAudit.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
@@ -165,5 +166,6 @@
     <LibraryObject Name="vcresman" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="arssl" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="dataobj" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="MpAudit" Source="Libraries.MpAudit.lby" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

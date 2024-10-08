@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Change the namespace to define where this text module should be located within the logical structure of your texts</note>
+    <prop type="x-BR-TS:Namespace">MpAudit/Event</prop>
+  </header>
+  <body>
+    <tu tuid="Root">
+      <tuv xml:lang="de">
+        <seg>{&amp;evtime[TIME=%D %u%T.%L]},{=$MpAudit/Event/{&amp;ev}}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>{&amp;evtime[TIME=%D %u%T.%L]},{=$MpAudit/Event/{&amp;ev}}</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>[%[TIME=%u%R]] [%op] [%ev$[TEXT=MpAudit/Event]]</seg>
+      </tuv>
+    </tu>
+    <tu tuid="RootDis">
+      <tuv xml:lang="de">
+        <seg>{=$MpAudit/Event/{&amp;ev}}</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>{=$MpAudit/Event/{&amp;ev}}</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>[%[TIME=%u%R]] [%op] [%ev$[TEXT=MpAudit/Event]]</seg>
+      </tuv>
+    </tu>
+    <tu tuid="33">
+      <tuv xml:lang="en">
+        <seg>alarm {&amp;name} changed state: {&amp;stold} to {&amp;stnew}</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Alarm {&amp;name} Status geändert: {&amp;stold} -&gt; {&amp;stnew}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="34">
+      <tuv xml:lang="en">
+        <seg>alarm {&amp;name} changed state: {&amp;stold} to {&amp;stnew}</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Alarm {&amp;name} Status geändert: {&amp;stold} -&gt; {&amp;stnew}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="16">
+      <tuv xml:lang="en">
+        <seg>{=$MpAudit/DP/{&amp;dpid}}</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>hat Wert [%dpid$[TEXT=MpAudit/DP]] von [%old] auf [%new] geändert</seg>
+      </tuv>
+    </tu>
+    <tu tuid="17">
+      <tuv xml:lang="en">
+        <seg>{=$MpAudit/DP/{&amp;dpid}}</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>hat Wert [%dpid$[TEXT=MpAudit/DP]] von [%old] auf [%new] geändert</seg>
+      </tuv>
+    </tu>
+    <tu tuid="18">
+      <tuv xml:lang="en">
+        <seg>{=$MpAudit/Custom/{&amp;typ}}</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>{=$MpAudit/Custom/{&amp;typ}}</seg>
+      </tuv>
+    </tu>
+    <tu tuid="20">
+      <tuv xml:lang="en">
+        <seg>{=$MpAudit/Custom/{&amp;typ}}</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>{=$MpAudit/Custom/{&amp;typ}}</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

@@ -42,6 +42,9 @@
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="SvgData" />
     <Parameter ID="FileDevicePath1" Value="F:\" />
+    <Group ID="FileDevice2" />
+    <Parameter ID="FileDeviceName2" Value="Log" />
+    <Parameter ID="FileDevicePath2" Value="F:\" />
     <Group ID="FtpUser1" />
     <Parameter ID="FtpUsername1" Value="DA" />
     <Parameter ID="FtpUserPassword1" Value="gBdy7moPaRGNddHnEHtHwDLVKDxOPrZ2Vpv05LB9mBA=" />

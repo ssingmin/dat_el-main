@@ -68,7 +68,15 @@ PROGRAM _CYCLIC
 	IF targetSlot.Interface = E_SLOT_UNKNOWN THEN
 		step 				:= 0;
 	END_IF
-
+	
+//	////smlee test////
+//	IF btestsmlee THEN
+//		btestsmlee := FALSE;
+//		MpAuditCustomEvent(gAuditTrak, "0", "smlee test.", "");
+//		MpAuditCustomEvent(gAuditTrak, "4100", "smlee test.", "smleetest2");//10/08/24 06:45:01.916,Insert your message, 'smlee test.', 'smleetest2'
+//	END_IF;
+//	//////////////////
+	
 	CASE step OF
 		0:	(* Modbus Interface Initialize and Shuttle Check *)
 			bBlockSendShuttleID					:= FALSE;

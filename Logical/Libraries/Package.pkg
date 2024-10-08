@@ -33,5 +33,6 @@
     <Object Type="Library" Language="binary" Description="The BRSystem library provides the user with a number of system functions for e.g. handling permanent memory, accessing exception information, etc.">brsystem</Object>
     <Object Type="Library" Language="binary" Description="This library integrates mathematical functions such as angle functions, rounding off, etc. into the program.">AsBrMath</Object>
     <Object Type="Library" Language="binary" Description="The AsMbTCP library is used to insert commands to the modbusTCP driver.">AsMbTCP</Object>
+    <Object Type="Library" Language="Binary" Description="Centralized event audit trail">MpAudit</Object>
   </Objects>
 </Package>

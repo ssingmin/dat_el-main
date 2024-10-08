@@ -9,5 +9,6 @@
     <Object Type="Program" Language="IEC">AxisCon</Object>
     <Object Type="DataObject" Language="Apt">AcpParTab</Object>
     <Object Type="Program" Language="IEC" Description="trak support: assembly design">TrakDesign</Object>
+    <Object Type="Program" Language="IEC">srvAudit</Object>
   </Objects>
 </Package>
