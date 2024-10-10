@@ -21,6 +21,8 @@ PROGRAM _INIT
 	g3DEndPos	:= 10.588;
 	AddedTime	:= 14000; //140000
 	
+	auditTag	:= "3D";
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -84,7 +86,11 @@ PROGRAM _CYCLIC
 				Axis							:= fbTrigInfo.TrgPointInfo.Axis;
 				
 				brsmemcpy(ADR(interface.Trak.Data[0]), ADR(userData.SerialNumber), 11);
-			
+				
+				brsmemcpy(ADR(ParStringTmp), ADR(interface.Trak.Data[0]), SIZEOF(interface.Trak.Data));
+				ParString := STRING_TO_WSTRING(ParStringTmp);
+				MpAuditCustomEvent(gAuditTrak, auditTag, "userData.Data[0]", ParString);
+				
 				ShReadSectorPosInfo.Enable		:= TRUE;
 				
 				IF ShReadSectorPosInfo.Valid THEN

@@ -38,5 +38,7 @@ VAR
 END_VAR
 (**)
 VAR
-	btestsmlee : BOOL;
+	ParStringTmp : STRING[80];
+	ParString : WSTRING[80];
+	auditTag : WSTRING[80];
 END_VAR

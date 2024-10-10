@@ -110,5 +110,10 @@
         <seg>ifStage19. '{&amp;msg}', '{&amp;cmt}'</seg>
       </tuv>
     </tu>
+    <tu tuid="3D">
+      <tuv xml:lang="en">
+        <seg>ifStage3D. '{&amp;msg}', '{&amp;cmt}'</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

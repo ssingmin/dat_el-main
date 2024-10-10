@@ -7,6 +7,9 @@ PROGRAM _INIT
 	
 	targetSlot ACCESS ADR(StStage[10]);
 	shuttleID ACCESS ADR(interface.Trak.Data[0]);
+	
+	auditTag  := "11";
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -65,6 +68,11 @@ PROGRAM _CYCLIC
 				brsmemcpy(ADR(interface.Trak.Data[0]),ADR(userData.SerialNumber), 11); 
 				brsmemcpy(ADR(interface.Trak.Data2[0]),ADR(userData.Data[0]), SIZEOF(userData.Data)); 
 				
+				ParString := STRING_TO_WSTRING(userData.SerialNumber);
+				MpAuditCustomEvent(gAuditTrak, auditTag, "userData.SerialNumber", ParString);
+				ParString := UINT_TO_WSTRING(userData.Data[0]);
+				MpAuditCustomEvent(gAuditTrak, auditTag, "userData.Data[0]", ParString);
+				
 				//Start to Write userdata to Modbus
 				bBlockSendOnce					:= TRUE;
 				bBlockSendShuttleID				:= TRUE;
@@ -80,6 +88,9 @@ PROGRAM _CYCLIC
 			
 		20: (* Check Process Ready *)
 			IF targetSlot.Interface = E_SLOT_PROCESS_READY THEN
+
+				MpAuditCustomEvent(gAuditTrak, auditTag, "targetSlot.Interface", "E_SLOT_PROCESS_READY");
+				
 				step 							:= 30;
 			ELSIF targetSlot.Shuttle.controlif = 0 THEN
 				step 							:= 0;
@@ -90,12 +101,17 @@ PROGRAM _CYCLIC
 				AND targetSlot.Interface = E_SLOT_PROCESS_READY THEN
 				interface.Trak.ShuttleArrived	:= TRUE;
 				fbShuttleOutCheck.Enable		:= TRUE;
+
+				ParString := BOOL_TO_WSTRING(interface.Trak.ShuttleArrived);
+				MpAuditCustomEvent(gAuditTrak, auditTag, "ShuttleArrived", ParString);
 				step 							:= 100;
 			END_IF
 		
 		100: (* Wait Proess End and Next Stage Ready *)
 			IF interface.Equipment.Done = TRUE AND NextReady THEN
 				//Start to Read Data from PLC
+				ParString := BOOL_TO_WSTRING(interface.Equipment.Done);
+				MpAuditCustomEvent(gAuditTrak, auditTag, "interface.Equipment.Done", ParString);
 				bBlockReadOnce					:= TRUE;
 				step 							:= 101;
 			END_IF
@@ -107,6 +123,10 @@ PROGRAM _CYCLIC
 				
 				// Read process data from PLC
 				brsmemcpy(ADR(userData.Data[0]), ADR(interface.Equipment.Data2[0]), SIZEOF(interface.Equipment.Data2)); 
+
+				brsmemcpy(ADR(ParStringTmp), ADR(userData.Data), SIZEOF(userData.Data));
+				ParString := STRING_TO_WSTRING(ParStringTmp);
+				MpAuditCustomEvent(gAuditTrak, auditTag, "userData.Data[0]", ParString);
 				
 				// End to Read Data from PLC
 				bBlockReadOnce					:= FALSE;
@@ -124,11 +144,17 @@ PROGRAM _CYCLIC
 				//	interface.Trak.ShuttleArrived 	:= FALSE;
 				targetSlot.Interface 			:= E_SLOT_TAKEOUT_READY;
 				targetSlot.NextStage			:= nextSlot;
+
+				MpAuditCustomEvent(gAuditTrak, auditTag, "targetSlot.Interface", "E_SLOT_TAKEOUT_READY");
+				ParString := UDINT_TO_WSTRING(targetSlot.NextStage);
+				MpAuditCustomEvent(gAuditTrak, auditTag, "targetSlot.NextStage", ParString);
 				step 							:= 120;
 			END_IF
 				
 		120: 	//Done Check	
 			IF interface.Equipment.Done = FALSE THEN
+				ParString := BOOL_TO_WSTRING(interface.Equipment.Done);
+				MpAuditCustomEvent(gAuditTrak, auditTag, "interface.Equipment.Done", ParString);
 				step 						:= 0;
 			END_IF
 	END_CASE;
@@ -136,6 +162,8 @@ PROGRAM _CYCLIC
 	IF fbShuttleOutCheck.EventCount > 0 THEN
 		interface.Trak.ShuttleArrived	:= FALSE;
 		fbShuttleOutCheck.Enable		:= FALSE;
+		ParString := UINT_TO_WSTRING(fbShuttleOutCheck.EventCount);
+		MpAuditCustomEvent(gAuditTrak, auditTag, "fbShuttleOutCheck.EventCount", ParString);
 	END_IF
 	
 	IF targetSlot.Shuttle.controlif = 0 AND shuttleID <> '' THEN

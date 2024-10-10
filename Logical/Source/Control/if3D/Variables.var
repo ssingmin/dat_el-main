@@ -47,3 +47,9 @@ VAR
 	bMovQuitTargetTimeVioloation : BOOL;
 	bMovQuitMaxFrequencyViolation : BOOL;
 END_VAR
+(**)
+VAR
+	ParStringTmp : STRING[80];
+	ParString : WSTRING[80];
+	auditTag : WSTRING[80];
+END_VAR
